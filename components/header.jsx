@@ -25,7 +25,7 @@ const Header = () => {
           <div className="flex space-x-4 pt-4">
             <div className="flex flex-col items-center p-4 bg-gray-800 rounded-lg cursor-pointer">
               <a href="#skill">
-                <p className="font-semibold text-center">Skills</p>
+                <p className="font-semibold text-center">Skill</p>
                 <div className="flex space-x-2 mt-2">
                   <Image src="/nextjs.svg" alt="nextjs" width={30} height={28} />
                   <Image src="/react.png" alt="reactjs" width={30} height={28} />
