@@ -6,7 +6,6 @@ import React, { useState } from 'react'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const imageLogo = "🍃"
 
   return (
     <header className="bg-gradient-to-r h-full from-gray-900 via-gray-800 to-black text-white md:h-screen flex items-center">
