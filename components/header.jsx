@@ -14,7 +14,7 @@ const Header = () => {
         {/* Left Section: Text and Links */}
         <div className="space-y-4 md:w-1/2">
           <p className="text-xl md:text-2xl font-light">
-            Hey 👋 I'm
+            Hey 👋 
           </p>
           <h1 className="text-4xl md:text-6xl font-bold">Arshdeep Singh</h1>
           <h2 className="text-2xl md:text-4xl font-semibold">
