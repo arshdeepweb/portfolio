@@ -17,7 +17,7 @@ const Skills = () => {
   return (
     <section id='skill' className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-10 px-5 md:px-20">
       <div className="max-w-10xl mx-auto text-center">
-        <h2 className="text-4xl font-semibold mb-6">My Skills</h2>
+        <h2 className="text-4xl font-semibold mb-6">Skills</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {skills.map((skill, index) => (
             <div
