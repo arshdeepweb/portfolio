@@ -1,32 +1,70 @@
+'use client';
 import React from 'react';
+import {
+  SiNextdotjs,
+  SiReact,
+  SiMongodb,
+  SiPostgresql,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiGit,
+  SiUbuntu,
+  SiTypescript,
+  SiPrisma,
+  SiRedis,
+  SiSocketdotio,
+} from 'react-icons/si';
 
 const skills = [
-  { name: "Next.js", icon: "⚛️" },
-  { name: "React", icon: "⚛️" },
-  { name: "MongoDB", icon: "🍃" },
-  { name: "PostgreSQL", icon: "🗃️" },
-  { name: "JavaScript", icon: "⚡" },
-  { name: "HTML & CSS", icon: "🌐" },
-  { name: "Ubuntu", icon: "🟧", highlight: true },
-  { name: "Git Source Control", icon: "🔧" },
-  { name: "Tailwind CSS", icon: "💨" }
+  { name: "Next.js", icon: <SiNextdotjs size={32} />, highlight: true },
+  { name: "React", icon: <SiReact size={32} />, highlight: true },
+  // { name: "TypeScript", icon: <SiTypescript size={32} /> },
+  { name: "JavaScript", icon: <SiJavascript size={32} /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss size={32} /> },
+  { name: "MongoDB", icon: <SiMongodb size={32} /> },
+  { name: "PostgreSQL", icon: <SiPostgresql size={32} /> },
+  { name: "Prisma ORM", icon: <SiPrisma size={32} /> },
+  { name: "Redis", icon: <SiRedis size={32} /> },
+  { name: "Socket.IO", icon: <SiSocketdotio size={32} /> },
+  {
+    name: "HTML & CSS",
+    icon: (
+      <div className="flex items-center space-x-1">
+        <SiHtml5 size={20} />
+        <SiCss3 size={20} />
+      </div>
+    ),
+  },
+  { name: "Git", icon: <SiGit size={32} /> },
+  { name: "Ubuntu", icon: <SiUbuntu size={32} />,},
 ];
-
 
 const Skills = () => {
   return (
-    <section id='skill' className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-10 px-5 md:px-20">
-      <div className="max-w-10xl mx-auto text-center">
-        <h2 className="text-4xl font-semibold mb-6">Skills</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    <section
+      id="skill"
+      className="bg-black text-white py-16 px-4 sm:px-8 md:px-20"
+    >
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-12 text-cyan-400">
+          My Skills
+        </h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 cursor-pointer">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center justify-center p-10 rounded-md shadow-md
-                hover:bg-yellow-500 cursor-pointer`}
+              className={`flex flex-col items-center justify-center p-10 rounded-xl shadow-md transition-transform duration-300 hover:scale-105
+                ${
+                  skill.highlight
+                    ? 'border-2 border-cyan-400 bg-gray-900'
+                    : 'bg-gray-700 hover:bg-gray-600'
+                }`}
             >
-              <span className="text-4xl mb-2">{skill.icon}</span>
-              <p className="text-sm font-semibold">{skill.name}</p>
+              <div className="text-cyan-400 mb-3">{skill.icon}</div>
+              <p className="text-base font-medium">{skill.name}</p>
             </div>
           ))}
         </div>

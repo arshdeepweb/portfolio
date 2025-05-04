@@ -1,26 +1,10 @@
-import React from 'react';
-
-const About = () => {
+export default function About() {
   return (
-    <section id='about' className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-10 px-5 md:px-20">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-semibold mb-4 border-l-4 border-yellow-500 pl-2">
-          About
-        </h2>
-        <p className="text-gray-300 leading-relaxed">
-          Dedicated Full Stack Developer with expertise in HTML5, CSS3,
-          JavaScript (ES6+), Next js, React.js, Tailwind CSS, Node.js, Express.js, and
-          MongoDB. <span className="font-semibold text-yellow-400">Skilled at building responsive, user-friendly web
-          applications with a focus on backend integration, API automation, and
-          project scalability.</span> Adept at version control using Git and collaboration
-          via GitHub. Proven experience in managing and deploying solutions for
-          E-Commerce and affiliate systems.
-
-        </p>
-        
-      </div>
+    <section id="about" className="py-20 max-w-6xl mx-auto px-4 md:px-10 bg-black text-center">
+      <h2 className="text-3xl text-cyan-400 font-semibold">About Me</h2>
+      <p className="mt-4 text-justify max-w-2xl mx-auto text-lg">
+        I'm Arshdeep Singh, a full-stack JavaScript developer and digital solutions provider. I specialize in building scalable web applications using modern technologies like React, Next.js, Node.js, Prisma, and PostgreSQL. With hands-on experience in real-time apps, eCommerce platforms, and automation solutions, I help businesses streamline their workflows and build powerful digital experiences. From frontend design with ShadCN and Tailwind to backend systems with Express, Redis, and Socket.IO — I deliver full-fledged, production-ready solutions.
+      </p>
     </section>
   );
-};
-
-export default About;
+}

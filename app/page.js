@@ -1,24 +1,24 @@
-import About from '@/components/About'
-import ContactMe from '@/components/Contact'
-import Experience from '@/components/Experience'
-import Portfolio from '@/components/Portfolio'
-import Skills from '@/components/Skills'
-import Header from '@/components/header'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Navbar from "@/components/Navbar";
+import Portfolio from "@/components/Portfolio";
+import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 
-const Page = () => {
+export default function Home() {
   return (
-    <div>
-      <Header />
+    <main className="max-w-[1440px] mx-auto bg-black text-white">
+      <Navbar />
+      <Hero />
+      <Experience />
       <About />
       <Skills />
-      <Experience />
       <Portfolio />
-      <ContactMe />
-    </div>
-  )
+      <Contact />
+      <Footer />
+    </main>
+  );
 }
-
-export default Page

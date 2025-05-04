@@ -1,33 +1,73 @@
-import React from 'react';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Image from "next/image";
 
 const projects = [
-  { title: "Safe Password", image: "/safe-password.png", link:"https://safepassword.vercel.app/" },
-  { title: "Currency Converter", image: "/currencyconverter.png", link:"https://currencycheck.vercel.app/" },
-  { title: "Invoice", image: "/invoice.png", link:"https://ndayurveda.vercel.app/" },
-  { title: "Food Ordering", image: "/foodDelivery.png", link:"https://food-ordering-frontend-g6sb.onrender.com/" },
-  { title: "Bg Removal", image: "/bg-removal.png", link:"https://bgeraser.vercel.app/" },
-  { title: "Affiliate Dashboard", image: "/affiliate.png", link:"https://affiliaterishtpusht.vercel.app" },
+  {
+    title: "Inventry Management",
+    image: "/inventrixpro.png",
+    link: "https://inventrixpro.vercel.app/",
+  },
+  {
+    title: "Health Care CRM",
+    image: "/employee-manage-app.png",
+    link: "https://acc.ndcarenirogam.com/",
+  },
+  {
+    title: "Gadget Ecommerce",
+    image: "/gadget-garage.png",
+    link: "https://gadgetgarageshop.vercel.app/",
+  },
+  {
+    title: "Affiliate Dashboard",
+    image: "/affiliate.png",
+    link: "https://affiliaterishtpusht.vercel.app",
+  },
+  {
+    title: "Food Ordering",
+    image: "/foodDelivery.png",
+    link: "https://food-ordering-frontend-g6sb.onrender.com/",
+  },
+  // { title: "Safe Password", image: "/safe-password.png", link:"https://safepassword.vercel.app/" },
+  {
+    title: "Bg Removal",
+    image: "/bg-removal.png",
+    link: "https://bgeraser.vercel.app/",
+  },
 ];
 
 const Portfolio = () => {
   return (
-    <section id='project' className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-10 px-5 md:px-20 text-center">
-      <h2 className="text-4xl font-semibold mb-6">Projects</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-6 cursor-pointer">
+    <section
+      id="project"
+      className="bg-black text-white py-16 px-4 sm:px-8 md:px-20 text-center"
+    >
+      <h2 className="text-4xl text-cyan-400 font-bold mb-12">Projects</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, index) => (
-         <div key={index}>
-           <div className="relative group hover:scale-110 transition-all rounded-xl">
-            <a href={project.link} target='_blank'><Image src={project.image} alt={project.title} layout="responsive" width={400} height={300} className="rounded-md object-cover" />
-            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <p className="text-lg font-semibold">{project.title}</p>
-            </div>
+          <div
+            key={index}
+            className="relative rounded-xl overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow duration-300"
+          >
+            <p className="text-xl my-2 font-bold">{project.title}</p>
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={300}
+                className="w-full h-60 object-cover rounded-md transition-transform duration-500 group-hover:scale-110 hover:opacity-80"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="text-center">
+                  <button className="mt-4 bg-cyan-400 text-black px-4 py-2 rounded-md font-medium hover:scale-105 transition-transform">
+                    Live Demo
+                  </button>
+                </div>
+              </div>
             </a>
           </div>
-            <div>
-              <button className="bg-yellow-500 text-black my-4 py-2 px-4 rounded-md font-semibold hover:scale-125 transition-all"><a href={project.link} target='_blank'>Live Demo</a></button>
-            </div>
-         </div>
         ))}
       </div>
     </section>
