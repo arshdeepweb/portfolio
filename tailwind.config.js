@@ -26,6 +26,8 @@ module.exports = {
           cyan: '#00C6FF',
           aqua: '#00FFC6',
           primary: '#0072FF',
+          gold: '#FFD700',
+          goldDark: '#FFB300',
         },
         dark: {
           50: '#f9fafb',
@@ -42,7 +44,7 @@ module.exports = {
         },
         text: {
           primary: '#E5E7EB',
-          secondary: '#9CA3AF',
+          secondary: '#A0A0A0',
         }
       },
       fontFamily: {

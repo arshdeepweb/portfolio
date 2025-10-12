@@ -76,8 +76,8 @@ const Hero = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-primary/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-aqua/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-gold/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-primary/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
       </div>
 
       <motion.div 
@@ -135,11 +135,11 @@ const Hero = () => {
               <div className="text-sm text-text-secondary">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent-primary">20+</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-gold">20+</div>
               <div className="text-sm text-text-secondary">Projects Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent-aqua">10+</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-primary">10+</div>
               <div className="text-sm text-text-secondary">Technologies</div>
             </div>
           </motion.div>
@@ -157,7 +157,7 @@ const Hero = () => {
                 <FaRocket className="w-4 h-4" />
                 Hire Me
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-primary to-accent-aqua opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-gold to-accent-goldDark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
             
             <Link
@@ -202,7 +202,7 @@ const Hero = () => {
         >
           <div className="relative">
             {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan via-accent-primary to-accent-aqua rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan via-accent-gold to-accent-primary rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
             
             {/* Profile Image Container */}
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-accent-cyan/30 float-animation">
@@ -229,19 +229,19 @@ const Hero = () => {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-primary/30"
+              className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent-gold/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-gold/30"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             >
-              <FaRocket className="text-accent-primary text-xl" />
+              <FaRocket className="text-accent-gold text-xl" />
             </motion.div>
 
             <motion.div
-              className="absolute top-1/2 -right-8 w-12 h-12 bg-accent-aqua/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-aqua/30"
+              className="absolute top-1/2 -right-8 w-12 h-12 bg-accent-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-primary/30"
               animate={{ x: [0, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             >
-              <FaCog className="text-accent-aqua text-lg" />
+              <FaCog className="text-accent-primary text-lg" />
             </motion.div>
           </div>
         </motion.div>

@@ -9,8 +9,9 @@
   --foreground: #E5E7EB;
   --primary: #00C6FF;
   --secondary: #0072FF;
-  --accent: #00FFC6;
-  --muted: #9CA3AF;
+  --accent: #FFD700;
+  --accent-dark: #FFB300;
+  --muted: #A0A0A0;
   --border: #1F2937;
   --card: #111827;
   --card-foreground: #E5E7EB;
@@ -61,7 +62,7 @@ body {
 /* Custom utility classes */
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-accent-cyan via-accent-primary to-accent-aqua bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent-cyan via-accent-gold to-accent-primary bg-clip-text text-transparent;
   }
   
   .bg-gradient-cyber {
@@ -69,7 +70,7 @@ body {
   }
   
   .border-gradient {
-    @apply border border-transparent bg-gradient-to-r from-accent-cyan via-accent-primary to-accent-aqua bg-clip-border;
+    @apply border border-transparent bg-gradient-to-r from-accent-cyan via-accent-gold to-accent-primary bg-clip-border;
   }
   
   .glass {
@@ -196,7 +197,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #00C6FF, #0072FF, #00FFC6);
+  background: linear-gradient(135deg, #00C6FF, #FFD700, #0072FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -35,32 +35,32 @@ const About = () => {
       icon: FaUsers, 
       value: 15, 
       label: "Happy Clients", 
-      color: "accent-magenta",
+      color: "accent-gold",
       suffix: "+"
     },
     { 
       icon: FaTrophy, 
       value: 2, 
       label: "Years Experience", 
-      color: "accent-neon",
+      color: "accent-primary",
       suffix: "+"
     },
     { 
       icon: FaCode, 
       value: 10, 
       label: "Technologies Mastered", 
-      color: "accent-purple",
+      color: "accent-primary",
       suffix: "+"
     }
   ];
 
   const interests = [
     { icon: FaCode, text: "Clean Code", color: "accent-cyan" },
-    { icon: FaRocket, text: "Innovation", color: "accent-magenta" },
-    { icon: FaUsers, text: "Teamwork", color: "accent-neon" },
-    { icon: FaLightbulb, text: "Problem Solving", color: "accent-purple" },
+    { icon: FaRocket, text: "Innovation", color: "accent-gold" },
+    { icon: FaUsers, text: "Teamwork", color: "accent-primary" },
+    { icon: FaLightbulb, text: "Problem Solving", color: "accent-gold" },
     { icon: FaChartLine, text: "Growth", color: "accent-cyan" },
-    { icon: FaGlobe, text: "Global Impact", color: "accent-magenta" }
+    { icon: FaGlobe, text: "Global Impact", color: "accent-primary" }
   ];
 
   useEffect(() => {
@@ -224,15 +224,15 @@ const About = () => {
                   <span>I drink more coffee than water ☕</span>
                 </div>
                 <div className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 bg-accent-magenta rounded-full"></div>
+                  <div className="w-2 h-2 bg-accent-gold rounded-full"></div>
                   <span>Always learning new technologies</span>
                 </div>
                 <div className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 bg-accent-neon rounded-full"></div>
+                  <div className="w-2 h-2 bg-accent-primary rounded-full"></div>
                   <span>Passionate about open source</span>
                 </div>
                 <div className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 bg-accent-purple rounded-full"></div>
+                  <div className="w-2 h-2 bg-accent-gold rounded-full"></div>
                   <span>Love solving complex problems</span>
                 </div>
               </div>
@@ -245,7 +245,7 @@ const About = () => {
             >
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-magenta text-dark-950 font-semibold rounded-lg btn-hover"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-primary text-dark-950 font-semibold rounded-lg btn-hover"
               >
                 <FaRocket className="w-4 h-4" />
                 Let's Work Together

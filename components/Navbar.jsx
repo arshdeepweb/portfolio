@@ -64,7 +64,7 @@ const Navbar = () => {
                   height={40}
                   className="rounded-full border-2 border-accent-cyan/30 group-hover:border-accent-cyan transition-colors duration-300"
                 />
-                <div className="absolute inset-0 rounded-full bg-accent-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 rounded-full bg-accent-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <span className="font-display font-bold text-lg gradient-text">
                 Arshdeep Singh
@@ -104,10 +104,10 @@ const Navbar = () => {
             <Link
               href="#contact"
               onClick={() => handleNavClick("#contact")}
-              className="group relative px-6 py-2 bg-gradient-to-r from-accent-cyan to-accent-magenta text-dark-950 font-semibold rounded-lg overflow-hidden btn-hover"
+              className="group relative px-6 py-2 bg-gradient-to-r from-accent-cyan to-accent-primary text-dark-950 font-semibold rounded-lg overflow-hidden btn-hover"
             >
               <span className="relative z-10">Get In Touch</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-magenta to-accent-neon opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-gold to-accent-goldDark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </motion.div>
 
@@ -212,7 +212,7 @@ const Navbar = () => {
                   <Link
                     href="#contact"
                     onClick={() => handleNavClick("#contact")}
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-accent-cyan to-accent-magenta text-dark-950 font-semibold rounded-lg btn-hover"
+                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-accent-cyan to-accent-primary text-dark-950 font-semibold rounded-lg btn-hover"
                   >
                     Get In Touch
                   </Link>
