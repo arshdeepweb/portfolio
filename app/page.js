@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-cyber text-foreground relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-cyber text-text-primary relative overflow-hidden">
       {/* Cyber grid background */}
       <div className="fixed inset-0 cyber-bg opacity-30 pointer-events-none"></div>
       

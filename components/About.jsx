@@ -26,28 +26,28 @@ const About = () => {
   const stats = [
     { 
       icon: FaRocket, 
-      value: 50, 
+      value: 20, 
       label: "Projects Completed", 
       color: "accent-cyan",
       suffix: "+"
     },
     { 
       icon: FaUsers, 
-      value: 25, 
+      value: 15, 
       label: "Happy Clients", 
       color: "accent-magenta",
       suffix: "+"
     },
     { 
       icon: FaTrophy, 
-      value: 3, 
+      value: 2, 
       label: "Years Experience", 
       color: "accent-neon",
       suffix: "+"
     },
     { 
       icon: FaCode, 
-      value: 15, 
+      value: 10, 
       label: "Technologies Mastered", 
       color: "accent-purple",
       suffix: "+"

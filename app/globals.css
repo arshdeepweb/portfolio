@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 :root {
-  --background: #0d1117;
-  --foreground: #f0f6fc;
-  --primary: #00f0ff;
-  --secondary: #ff00ff;
-  --accent: #00ff88;
-  --muted: #6e7681;
-  --border: #30363d;
-  --card: #161b22;
-  --card-foreground: #f0f6fc;
+  --background: #0B0F19;
+  --foreground: #E5E7EB;
+  --primary: #00C6FF;
+  --secondary: #0072FF;
+  --accent: #00FFC6;
+  --muted: #9CA3AF;
+  --border: #1F2937;
+  --card: #111827;
+  --card-foreground: #E5E7EB;
 }
 
 * {
@@ -61,7 +61,7 @@ body {
 /* Custom utility classes */
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-accent-cyan via-accent-magenta to-accent-neon bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent-cyan via-accent-primary to-accent-aqua bg-clip-text text-transparent;
   }
   
   .bg-gradient-cyber {
@@ -69,7 +69,7 @@ body {
   }
   
   .border-gradient {
-    @apply border border-transparent bg-gradient-to-r from-accent-cyan via-accent-magenta to-accent-neon bg-clip-border;
+    @apply border border-transparent bg-gradient-to-r from-accent-cyan via-accent-primary to-accent-aqua bg-clip-border;
   }
   
   .glass {
@@ -130,10 +130,10 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 198, 255, 0.5);
   }
   50% {
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.8), 0 0 30px rgba(0, 255, 198, 0.6);
   }
 }
 
@@ -151,7 +151,7 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: var(--primary);
+    border-color: #00C6FF;
   }
 }
 
@@ -189,14 +189,14 @@ body {
 /* Cyber grid background */
 .cyber-bg {
   background-image: 
-    linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(0, 198, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 198, 255, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #00f0ff, #ff00ff, #00ff88);
+  background: linear-gradient(135deg, #00C6FF, #0072FF, #00FFC6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
