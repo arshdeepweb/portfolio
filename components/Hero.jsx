@@ -1,90 +1,251 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import {
-  FaDiscord,
-  FaTwitter,
   FaGithub,
   FaLinkedin,
-  FaYoutube,
-  FaInstagram,
-  FaMailBulk,
   FaEnvelope,
+  FaTwitter,
+  FaInstagram,
+  FaDownload,
+  FaCode,
+  FaRocket,
+  FaCog,
 } from "react-icons/fa";
 
 const Hero = () => {
+  const [currentText, setCurrentText] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const texts = [
+    "I build scalable applications",
+    "I automate complex systems", 
+    "I make ideas reality",
+    "I create digital experiences",
+    "I solve real-world problems"
+  ];
+
+  useEffect(() => {
+    const current = texts[currentText];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < current.length) {
+          setDisplayText(current.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(displayText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setCurrentText((prev) => (prev + 1) % texts.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentText, texts]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
-    <section className="min-h-screen bg-black text-white px-6 md:px-20 py-20 flex flex-col-reverse md:flex-row justify-around items-center gap-10 md:gap-5">
-      {/* Left Section */}
-      <div className="max-w-xl">
-        <h1 className="text-4xl md:text-5xl font-bold leading-snug">
-          Software engineer by day,{" "}
-          <span className="text-cyan-400"> heart debugger by night.</span>
-        </h1>
-        <p className="text-gray-400 mt-6 text-lg">
-          Meet Arshdeep Singh — a passionate software engineer, entrepreneur,
-          and digital solutions expert with a drive to build impactful
-          technology. With a deep understanding of full-stack development,
-          backend architecture, and advanced tech solutions, Arshdeep has a
-          proven track record in crafting scalable applications and innovative
-          systems.
-        </p>
-        <p className="text-sm text-gray-500 mt-2">~ Google AI</p>
+    <section className="min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-20 py-20 relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-magenta/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-neon/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
+      </div>
 
-        <p className="mt-6 text-lg">
-          Building <span className="font-bold">Scalable Apps</span> that grow with you.
-          ✨
-        </p>
+      <motion.div 
+        className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Left Section - Content */}
+        <motion.div className="space-y-8" variants={itemVariants}>
+          {/* Greeting */}
+          <motion.div 
+            className="flex items-center gap-3 text-accent-cyan font-mono text-sm md:text-base"
+            variants={itemVariants}
+          >
+            <div className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse"></div>
+            <span>Hello, I'm</span>
+          </motion.div>
 
-        {/* Button */}
-        <Link
-          href="https://linkedin.com/in/arshdeepweb"
-          target="_blank"
-          className="inline-flex items-center gap-2 mt-6 px-5 py-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold rounded-md shadow hover:opacity-90 transition"
+          {/* Name */}
+          <motion.h1 
+            className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight"
+            variants={itemVariants}
+          >
+            <span className="text-foreground">Arshdeep</span>
+            <br />
+            <span className="gradient-text">Singh</span>
+          </motion.h1>
+
+          {/* Animated Typing Text */}
+          <motion.div 
+            className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground/90 min-h-[3rem] flex items-center"
+            variants={itemVariants}
+          >
+            <span className="text-accent-cyan">{displayText}</span>
+            <span className="animate-pulse text-accent-cyan">|</span>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p 
+            className="text-lg md:text-xl text-foreground/70 leading-relaxed max-w-2xl"
+            variants={itemVariants}
+          >
+            Full-stack developer crafting innovative digital solutions with modern technologies. 
+            Passionate about building scalable applications that make a real impact.
+          </motion.p>
+
+          {/* Stats */}
+          <motion.div 
+            className="grid grid-cols-3 gap-6 py-6"
+            variants={itemVariants}
+          >
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">3+</div>
+              <div className="text-sm text-foreground/60">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-accent-magenta">50+</div>
+              <div className="text-sm text-foreground/60">Projects Completed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-accent-neon">15+</div>
+              <div className="text-sm text-foreground/60">Technologies</div>
+            </div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4"
+            variants={itemVariants}
+          >
+            <Link
+              href="#contact"
+              className="group relative px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-magenta text-dark-950 font-semibold rounded-lg overflow-hidden btn-hover"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <FaRocket className="w-4 h-4" />
+                Hire Me
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-magenta to-accent-neon opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Link>
+            
+            <Link
+              href="#projects"
+              className="group px-8 py-4 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan hover:text-dark-950 transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <FaCode className="w-4 h-4" />
+              View Work
+            </Link>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div 
+            className="flex gap-6 text-2xl"
+            variants={itemVariants}
+          >
+            {[
+              { icon: FaGithub, href: "https://github.com/arshdeepdev", label: "GitHub" },
+              { icon: FaLinkedin, href: "https://linkedin.com/in/arshdeepdev", label: "LinkedIn" },
+              { icon: FaEnvelope, href: "mailto:imarshdeep99@email.com", label: "Email" },
+              { icon: FaTwitter, href: "https://x.com/arshdeepdev", label: "Twitter" },
+              { icon: FaInstagram, href: "https://www.instagram.com/arshdeepweb", label: "Instagram" },
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/60 hover:text-accent-cyan transition-colors duration-300 hover:scale-110 transform"
+                aria-label={social.label}
+              >
+                <social.icon />
+              </a>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Right Section - Profile Image */}
+        <motion.div 
+          className="relative flex justify-center lg:justify-end"
+          variants={itemVariants}
         >
-          <FaLinkedin size={20} />
-          Connenct Now
-        </Link>
+          <div className="relative">
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan via-accent-magenta to-accent-neon rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
+            
+            {/* Profile Image Container */}
+            <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-accent-cyan/30 float-animation">
+              <Image
+                src="/header1.jpeg"
+                alt="Arshdeep Singh - Full Stack Developer"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+                priority
+              />
+              
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-950/20 via-transparent to-transparent"></div>
+            </div>
 
-        {/* Socials */}
-        <div className="flex gap-5 mt-10 text-2xl text-gray-400">
-          {/* <a href="https://linkedin.com/in/arshdeepweb" className="hover:text-white"><FaLinkedin /></a> */}
-          <a
-            href="mailto:imarshdeep99@email.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white"
-          >
-            <FaEnvelope />
-          </a>
-          <a
-            href="https://github.com/arshdeepweb/"
-            className="hover:text-white"
-          >
-            <FaGithub />
-          </a>
-          <a href="https://x.com/arshwebdev" className="hover:text-white">
-            <FaTwitter />
-          </a>
-          <a
-            href="https://www.instagram.com/arshdeepweb"
-            className="hover:text-white"
-          >
-            <FaInstagram />
-          </a>
-        </div>
-      </div>
+            {/* Floating Elements */}
+            <motion.div
+              className="absolute -top-4 -right-4 w-16 h-16 bg-accent-cyan/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-cyan/30"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <FaCode className="text-accent-cyan text-xl" />
+            </motion.div>
 
-      {/* Right Section - Image */}
-      <div className="rounded-md overflow-hidden w-[300px] h-[300px] md:w-[350px] md:h-[350px]">
-        <Image
-          src="/header1.jpeg" // replace with your image path
-          alt="header Image"
-          width={450}
-          height={450}
-          className="object-cover w-full h-full"
-        />
-      </div>
+            <motion.div
+              className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent-magenta/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-magenta/30"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            >
+              <FaRocket className="text-accent-magenta text-xl" />
+            </motion.div>
+
+            <motion.div
+              className="absolute top-1/2 -right-8 w-12 h-12 bg-accent-neon/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-neon/30"
+              animate={{ x: [0, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              <FaCog className="text-accent-neon text-lg" />
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

@@ -9,7 +9,13 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="max-w-[1440px] mx-auto bg-black text-white">
+    <main className="min-h-screen bg-gradient-cyber text-foreground relative overflow-hidden">
+      {/* Cyber grid background */}
+      <div className="fixed inset-0 cyber-bg opacity-30 pointer-events-none"></div>
+      
+      {/* Gradient overlays */}
+      <div className="fixed inset-0 bg-gradient-to-br from-transparent via-dark-950/50 to-dark-900/80 pointer-events-none"></div>
+      
       <Navbar />
       <Hero />
       <Experience />
