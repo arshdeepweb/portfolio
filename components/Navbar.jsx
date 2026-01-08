@@ -64,7 +64,7 @@ const Navbar = () => {
                   height={40}
                   className="rounded-full border-2 border-accent-cyan/30 group-hover:border-accent-cyan transition-colors duration-300"
                 />
-                <div className="absolute inset-0 rounded-full bg-accent-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 rounded-full bg-accent-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <span className="font-display font-bold text-lg gradient-text">
                 Arshdeep Singh
@@ -84,7 +84,7 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="group relative px-4 py-2 rounded-lg text-foreground/80 hover:text-accent-cyan transition-colors duration-300 flex items-center gap-2"
+                  className="group relative px-4 py-2 rounded-lg text-text-primary hover:text-accent-cyan transition-colors duration-300 flex items-center gap-2"
                 >
                   <item.icon className="w-4 h-4" />
                   <span className="font-medium">{item.label}</span>
@@ -104,16 +104,16 @@ const Navbar = () => {
             <Link
               href="#contact"
               onClick={() => handleNavClick("#contact")}
-              className="group relative px-6 py-2 bg-gradient-to-r from-accent-cyan to-accent-primary text-dark-950 font-semibold rounded-lg overflow-hidden btn-hover"
+              className="group relative px-6 py-2 bg-accent-cyan text-dark-950 font-semibold rounded-lg overflow-hidden btn-hover"
             >
               <span className="relative z-10">Get In Touch</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-gold to-accent-goldDark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-accent-cyan/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </motion.div>
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden relative z-50 p-2 rounded-lg text-foreground hover:text-accent-cyan transition-colors duration-300"
+            className="lg:hidden relative z-50 p-2 rounded-lg text-text-secondary hover:text-accent-cyan transition-colors duration-300"
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             whileTap={{ scale: 0.95 }}
           >
@@ -193,7 +193,7 @@ const Navbar = () => {
                         <Link
                           href={item.href}
                           onClick={() => handleNavClick(item.href)}
-                          className="group flex items-center gap-3 px-4 py-3 rounded-lg text-foreground/80 hover:text-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300"
+                          className="group flex items-center gap-3 px-4 py-3 rounded-lg text-text-primary hover:text-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300"
                         >
                           <item.icon className="w-5 h-5" />
                           <span className="font-medium">{item.label}</span>
@@ -212,7 +212,7 @@ const Navbar = () => {
                   <Link
                     href="#contact"
                     onClick={() => handleNavClick("#contact")}
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-accent-cyan to-accent-primary text-dark-950 font-semibold rounded-lg btn-hover"
+                    className="block w-full text-center px-6 py-3 bg-accent-cyan text-dark-950 font-semibold rounded-lg btn-hover"
                   >
                     Get In Touch
                   </Link>

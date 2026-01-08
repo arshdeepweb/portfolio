@@ -35,32 +35,32 @@ const About = () => {
       icon: FaUsers, 
       value: 15, 
       label: "Happy Clients", 
-      color: "accent-gold",
+      color: "accent-cyan",
       suffix: "+"
     },
     { 
       icon: FaTrophy, 
       value: 2, 
       label: "Years Experience", 
-      color: "accent-primary",
+      color: "accent-cyan",
       suffix: "+"
     },
     { 
       icon: FaCode, 
       value: 10, 
       label: "Technologies Mastered", 
-      color: "accent-primary",
+      color: "accent-cyan",
       suffix: "+"
     }
   ];
 
   const interests = [
     { icon: FaCode, text: "Clean Code", color: "accent-cyan" },
-    { icon: FaRocket, text: "Innovation", color: "accent-gold" },
-    { icon: FaUsers, text: "Teamwork", color: "accent-primary" },
-    { icon: FaLightbulb, text: "Problem Solving", color: "accent-gold" },
+    { icon: FaRocket, text: "Innovation", color: "accent-cyan" },
+    { icon: FaUsers, text: "Teamwork", color: "accent-cyan" },
+    { icon: FaLightbulb, text: "Problem Solving", color: "accent-cyan" },
     { icon: FaChartLine, text: "Growth", color: "accent-cyan" },
-    { icon: FaGlobe, text: "Global Impact", color: "accent-primary" }
+    { icon: FaGlobe, text: "Global Impact", color: "accent-cyan" }
   ];
 
   useEffect(() => {
@@ -118,7 +118,7 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             <span className="gradient-text">About Me</span>
           </h2>
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
+          <p className="text-text-primary text-lg max-w-2xl mx-auto">
             Passionate developer crafting digital experiences that make a difference
           </p>
         </motion.div>
@@ -133,10 +133,10 @@ const About = () => {
             className="space-y-8"
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold text-text-secondary mb-6">
                 Hello! I'm <span className="gradient-text">Arshdeep Singh</span>
               </h3>
-              <div className="space-y-4 text-foreground/80 leading-relaxed">
+              <div className="space-y-4 text-text-primary leading-relaxed">
                 <p>
                   I'm a passionate full-stack developer with a love for creating innovative digital solutions. 
                   With expertise in modern web technologies, I specialize in building scalable applications 
@@ -157,16 +157,16 @@ const About = () => {
 
             {/* Interests */}
             <motion.div variants={itemVariants}>
-              <h4 className="text-xl font-semibold text-foreground mb-4">What Drives Me</h4>
+              <h4 className="text-xl font-semibold text-text-secondary mb-4">What Drives Me</h4>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {interests.map((interest, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-dark-900/50 border border-accent-cyan/20 hover:border-accent-cyan/40 transition-all duration-300 group"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-text-secondary/10 border border-text-secondary/20 hover:border-accent-cyan/40 transition-all duration-300 group"
                     whileHover={{ scale: 1.05 }}
                   >
                     <interest.icon className="w-5 h-5 text-accent-cyan group-hover:scale-110 transition-transform duration-300" />
-                    <span className="text-sm font-medium text-foreground/80">{interest.text}</span>
+                    <span className="text-sm font-medium text-text-primary">{interest.text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -189,50 +189,50 @@ const About = () => {
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-dark-900/50 backdrop-blur-sm border border-accent-cyan/20 rounded-2xl p-6 text-center hover:border-accent-cyan/40 transition-all duration-300 card-hover"
+                  className="group relative bg-text-secondary/10 backdrop-blur-sm border border-text-secondary/20 rounded-2xl p-6 text-center hover:border-accent-cyan/40 transition-all duration-300 card-hover"
                   whileHover={{ y: -5 }}
                 >
                   <div className="inline-flex p-4 rounded-xl bg-accent-cyan/20 text-accent-cyan mb-4 group-hover:scale-110 transition-transform duration-300">
                     <stat.icon className="w-8 h-8" />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-text-secondary mb-2">
                     {counts[stat.label.toLowerCase().replace(/\s+/g, '')] || 0}
                     <span className="text-accent-cyan">{stat.suffix}</span>
                   </div>
-                  <div className="text-sm text-foreground/70 font-medium">
+                  <div className="text-sm text-text-primary font-medium">
                     {stat.label}
                   </div>
                   
                   {/* Animated Background */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-cyan/5 via-accent-magenta/5 to-accent-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-accent-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 </motion.div>
               ))}
             </motion.div>
 
             {/* Fun Facts */}
             <motion.div
-              className="bg-gradient-to-br from-dark-900/50 to-dark-800/50 backdrop-blur-sm border border-accent-cyan/20 rounded-2xl p-6"
+              className="bg-text-secondary/10 backdrop-blur-sm border border-text-secondary/20 rounded-2xl p-6"
               variants={itemVariants}
             >
-              <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+              <h4 className="text-xl font-semibold text-text-secondary mb-4 flex items-center gap-2">
                 <FaCoffee className="text-accent-cyan" />
                 Fun Facts
               </h4>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-foreground/80">
+                <div className="flex items-center gap-3 text-text-primary">
                   <div className="w-2 h-2 bg-accent-cyan rounded-full"></div>
                   <span>I drink more coffee than water ☕</span>
                 </div>
-                <div className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 bg-accent-gold rounded-full"></div>
+                <div className="flex items-center gap-3 text-text-primary">
+                  <div className="w-2 h-2 bg-accent-cyan rounded-full"></div>
                   <span>Always learning new technologies</span>
                 </div>
-                <div className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 bg-accent-primary rounded-full"></div>
+                <div className="flex items-center gap-3 text-text-primary">
+                  <div className="w-2 h-2 bg-accent-cyan rounded-full"></div>
                   <span>Passionate about open source</span>
                 </div>
-                <div className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 bg-accent-gold rounded-full"></div>
+                <div className="flex items-center gap-3 text-text-primary">
+                  <div className="w-2 h-2 bg-accent-cyan rounded-full"></div>
                   <span>Love solving complex problems</span>
                 </div>
               </div>
@@ -245,7 +245,7 @@ const About = () => {
             >
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-primary text-dark-950 font-semibold rounded-lg btn-hover"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-accent-cyan text-dark-950 font-semibold rounded-lg btn-hover"
               >
                 <FaRocket className="w-4 h-4" />
                 Let's Work Together

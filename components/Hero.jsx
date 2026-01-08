@@ -76,8 +76,8 @@ const Hero = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-gold/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-primary/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-cyan/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
       </div>
 
       <motion.div 
@@ -102,14 +102,14 @@ const Hero = () => {
             className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight"
             variants={itemVariants}
           >
-            <span className="text-text-primary">Arshdeep</span>
+            <span className="text-text-secondary">Arshdeep</span>
             <br />
             <span className="gradient-text">Singh</span>
           </motion.h1>
 
           {/* Animated Typing Text */}
           <motion.div 
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground/90 min-h-[3rem] flex items-center"
+            className="text-2xl md:text-3xl lg:text-4xl font-medium text-text-primary min-h-[3rem] flex items-center"
             variants={itemVariants}
           >
             <span className="text-accent-cyan">{displayText}</span>
@@ -118,7 +118,7 @@ const Hero = () => {
 
           {/* Description */}
           <motion.p 
-            className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl"
+            className="text-lg md:text-xl text-text-primary leading-relaxed max-w-2xl"
             variants={itemVariants}
           >
             Full-stack developer crafting innovative digital solutions with modern technologies. 
@@ -132,15 +132,15 @@ const Hero = () => {
           >
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-accent-cyan">2+</div>
-              <div className="text-sm text-text-secondary">Years Experience</div>
+              <div className="text-sm text-text-primary">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent-gold">20+</div>
-              <div className="text-sm text-text-secondary">Projects Completed</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">20+</div>
+              <div className="text-sm text-text-primary">Projects Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent-primary">10+</div>
-              <div className="text-sm text-text-secondary">Technologies</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">10+</div>
+              <div className="text-sm text-text-primary">Technologies</div>
             </div>
           </motion.div>
 
@@ -151,13 +151,13 @@ const Hero = () => {
           >
             <Link
               href="#contact"
-              className="group relative px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-primary text-dark-950 font-semibold rounded-lg overflow-hidden btn-hover"
+              className="group relative px-8 py-4 bg-accent-cyan text-dark-950 font-semibold rounded-lg overflow-hidden btn-hover"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 <FaRocket className="w-4 h-4" />
                 Hire Me
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-gold to-accent-goldDark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-accent-cyan/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
             
             <Link
@@ -186,7 +186,7 @@ const Hero = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent-cyan transition-colors duration-300 hover:scale-110 transform"
+                className="text-text-primary hover:text-accent-cyan transition-colors duration-300 hover:scale-110 transform"
                 aria-label={social.label}
               >
                 <social.icon />
@@ -202,7 +202,7 @@ const Hero = () => {
         >
           <div className="relative">
             {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan via-accent-gold to-accent-primary rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
+            <div className="absolute inset-0 bg-accent-cyan rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
             
             {/* Profile Image Container */}
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-accent-cyan/30 float-animation">
@@ -229,19 +229,19 @@ const Hero = () => {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent-gold/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-gold/30"
+              className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent-cyan/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-cyan/30"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             >
-              <FaRocket className="text-accent-gold text-xl" />
+              <FaRocket className="text-accent-cyan text-xl" />
             </motion.div>
 
             <motion.div
-              className="absolute top-1/2 -right-8 w-12 h-12 bg-accent-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-primary/30"
+              className="absolute top-1/2 -right-8 w-12 h-12 bg-accent-cyan/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-cyan/30"
               animate={{ x: [0, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             >
-              <FaCog className="text-accent-primary text-lg" />
+              <FaCog className="text-accent-cyan text-lg" />
             </motion.div>
           </div>
         </motion.div>
