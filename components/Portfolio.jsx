@@ -40,7 +40,6 @@ const projects = [
   {
     title: "Notes API - Backend System",
     image: "/notes-api.png",
-    // link: "https://notes-api-flax.vercel.app/api",
     github: "https://github.com/arshdeepweb/notes-api",
     description: "Secure REST API for note management with Cloudinary file integration and robust authentication.",
     category: "Backend",
