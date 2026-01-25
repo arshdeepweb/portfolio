@@ -102,7 +102,7 @@ const Hero = () => {
               <div className="text-sm text-text-primary">Delivery Rate</div>
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">5+</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">2+</div>
               <div className="text-sm text-text-primary">Years Experience</div>
             </div>
           </motion.div>

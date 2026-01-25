@@ -106,7 +106,7 @@ const Pricing = () => {
         if (data.country_code === 'IN') {
           setCurrency('INR');
           setPrices({
-            landing: "₹5,000",
+            landing: "₹10,000",
             static: "₹20,000",
             starter: "₹50,000",
             growth: "₹1,50,000",
