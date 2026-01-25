@@ -16,6 +16,39 @@ import {
 
 const projects = [
   {
+    title: "Kamakshi World - E-commerce Admin",
+    image: "/kamakshri.png",
+    link: "https://www.kamakshiworld.com/",
+    github: "#",
+    description: "Robust e-commerce admin panel for tracking orders, managing products with multiple images, and handling user logins.",
+    category: "Full Stack",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    features: ["Order Tracking", "Product Management", "Multi-image Upload", "Admin Authentication"],
+    type: "web"
+  },
+  {
+    title: "Health Care Booking System",
+    image: "/booking.png",
+    link: "https://registration.rishtpusht.in/booking",
+    github: "#",
+    description: "Advanced healthcare appointment booking system with slot management, admin tracking, and PayU payment integration.",
+    category: "Full Stack",
+    technologies: ["React", "Node.js", "PostgreSQL", "Express.js", "PayU"],
+    features: ["Appointment Booking", "Slot Management", "PayU Integration", "Admin Dashboard"],
+    type: "web"
+  },
+  {
+    title: "Notes API - Backend System",
+    image: "/notes-api.png",
+    // link: "https://notes-api-flax.vercel.app/api",
+    github: "https://github.com/arshdeepweb/notes-api",
+    description: "Secure REST API for note management with Cloudinary file integration and robust authentication.",
+    category: "Backend",
+    technologies: ["NestJS", "PostgreSQL", "TypeORM", "Cloudinary", "JWT"],
+    features: ["Secure file handling", "JWT Authentication", "Database management", "Scalable Architecture"],
+    type: "api"
+  },
+  {
     title: "InventrixPro - Inventory Management",
     image: "/inventrixpro.png",
     link: "https://inventrixpro.vercel.app/",

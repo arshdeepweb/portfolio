@@ -23,6 +23,26 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [formData, setFormData] = useState({});
+  const [budgetOptions, setBudgetOptions] = useState([
+    "$1k - $3k", "$3k - $10k", "$10k - $25k", "$25k+"
+  ]);
+
+  React.useEffect(() => {
+    const fetchLocation = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        if (data.country_code === 'IN') {
+          setBudgetOptions([
+            "₹10k - ₹50k","₹50k - ₹1L", "₹1L - ₹3L", "₹3L+"
+          ]);
+        }
+      } catch (error) {
+        console.error('Failed to fetch location:', error);
+      }
+    };
+    fetchLocation();
+  }, []);
 
   const {
     register,
@@ -184,7 +204,7 @@ const Contact = () => {
                 {/* Name Field */}
                 <div className="relative">
                   <label className="block text-sm font-medium text-foreground/80 mb-2">
-                    Full Name *
+                    Name *
                   </label>
                   <div className="relative">
                     <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/40 w-4 h-4" />
@@ -203,7 +223,7 @@ const Contact = () => {
                 {/* Email Field */}
                 <div className="relative">
                   <label className="block text-sm font-medium text-foreground/80 mb-2">
-                    Email Address *
+                    Work Email *
                   </label>
                   <div className="relative">
                     <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/40 w-4 h-4" />
@@ -217,7 +237,7 @@ const Contact = () => {
                         },
                       })}
                       className="w-full pl-10 pr-4 py-3 bg-dark-800/50 border border-accent-cyan/20 rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300"
-                      placeholder="your.email@example.com"
+                      placeholder="name@company.com"
                     />
                   </div>
                   {errors.email && (
@@ -225,45 +245,66 @@ const Contact = () => {
                   )}
                 </div>
 
-                {/* Phone Field */}
+                {/* Project Type Dropdown */}
                 <div className="relative">
                   <label className="block text-sm font-medium text-foreground/80 mb-2">
-                    Phone Number
+                    Project Type *
                   </label>
                   <div className="relative">
-                    <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/40 w-4 h-4" />
-                    <input
-                      type="tel"
-                      {...register('phone')}
-                      className="w-full pl-10 pr-4 py-3 bg-dark-800/50 border border-accent-cyan/20 rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300"
-                      placeholder="Your phone number (optional)"
-                    />
+                    <select
+                      {...register('projectType', { required: 'Project type is required' })}
+                      className="w-full pl-4 pr-10 py-3 bg-dark-800/50 border border-accent-cyan/20 rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300 appearance-none"
+                    >
+                      <option value="" className="bg-dark-900">Select a project type...</option>
+                      <option value="web_app" className="bg-dark-900">Web & App Development</option>
+                      <option value="automation" className="bg-dark-900">Business Automation</option>
+                      <option value="internal_tool" className="bg-dark-900">Internal Tool / Dashboard</option>
+                      <option value="ai_consulting" className="bg-dark-900">AI Consulting</option>
+                      <option value="other" className="bg-dark-900">Other</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-foreground/40">
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-
-                {/* Subject Field */}
-                <div className="relative">
-                  <label className="block text-sm font-medium text-foreground/80 mb-2">
-                    Subject *
-                  </label>
-                  <div className="relative">
-                    <FaEdit className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/40 w-4 h-4" />
-                    <input
-                      type="text"
-                      {...register('subject', { required: 'Subject is required' })}
-                      className="w-full pl-10 pr-4 py-3 bg-dark-800/50 border border-accent-cyan/20 rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300"
-                      placeholder="What's this about?"
-                    />
-                  </div>
-                  {errors.subject && (
-                    <p className="text-red-400 text-sm mt-1">{errors.subject.message}</p>
+                  {errors.projectType && (
+                    <p className="text-red-400 text-sm mt-1">{errors.projectType.message}</p>
                   )}
                 </div>
 
-                {/* Message Field */}
+                {/* Budget Dropdown */}
                 <div className="relative">
                   <label className="block text-sm font-medium text-foreground/80 mb-2">
-                    Message *
+                    Estimated Budget *
+                  </label>
+                  <div className="relative">
+                    <select
+                      {...register('budget', { required: 'Budget is required' })}
+                      className="w-full pl-4 pr-10 py-3 bg-dark-800/50 border border-accent-cyan/20 rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300 appearance-none"
+                    >
+                      <option value="" className="bg-dark-900">Select a budget range...</option>
+                      {budgetOptions.map((option, index) => (
+                        <option key={index} value={option} className="bg-dark-900">
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-foreground/40">
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  {errors.budget && (
+                    <p className="text-red-400 text-sm mt-1">{errors.budget.message}</p>
+                  )}
+                </div>
+
+                {/* Project Details (Message) */}
+                <div className="relative">
+                  <label className="block text-sm font-medium text-foreground/80 mb-2">
+                    Project Details *
                   </label>
                   <div className="relative">
                     <FaComment className="absolute left-3 top-3 text-foreground/40 w-4 h-4" />
@@ -271,7 +312,7 @@ const Contact = () => {
                       {...register('message', { required: 'Message is required' })}
                       rows={5}
                       className="w-full pl-10 pr-4 py-3 bg-dark-800/50 border border-accent-cyan/20 rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300 resize-none"
-                      placeholder="Tell me about your project or just say hello!"
+                      placeholder="Tell me about the business problem you are trying to solve..."
                     />
                   </div>
                   {errors.message && (
@@ -293,7 +334,7 @@ const Contact = () => {
                     ) : (
                       <FaPaperPlane className="w-4 h-4" />
                     )}
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Sending...' : 'Request Strategy Call'}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-accent-magenta to-accent-neon opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.button>
@@ -354,7 +395,7 @@ const Contact = () => {
           theme="dark"
           toastStyle={{
             background: '#0d1117',
-            border: '1px solid #00f0ff',
+            border: '1px solid #21c063',
             color: '#f0f6fc'
           }}
         />

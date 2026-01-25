@@ -17,39 +17,8 @@ import {
 } from "react-icons/fa";
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  // Typing animation removed for cleaner business look
 
-  const texts = [
-    "I build scalable applications",
-    "I automate complex systems", 
-    "I make ideas reality",
-    "I create digital experiences",
-    "I solve real-world problems"
-  ];
-
-  useEffect(() => {
-    const current = texts[currentText];
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (displayText.length < current.length) {
-          setDisplayText(current.slice(0, displayText.length + 1));
-        } else {
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      } else {
-        if (displayText.length > 0) {
-          setDisplayText(displayText.slice(0, -1));
-        } else {
-          setIsDeleting(false);
-          setCurrentText((prev) => (prev + 1) % texts.length);
-        }
-      }
-    }, isDeleting ? 50 : 100);
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentText, texts]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -94,53 +63,47 @@ const Hero = () => {
             variants={itemVariants}
           >
             <div className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse"></div>
-            <span>Hello, I'm</span>
+            <span>System Builder & Automation Consultant</span>
           </motion.div>
 
-          {/* Name */}
+          {/* Headline */}
           <motion.h1 
-            className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight"
             variants={itemVariants}
           >
-            <span className="text-text-secondary">Arshdeep</span>
+            <span className="text-text-secondary">Building Scalable Systems for</span>
             <br />
-            <span className="gradient-text">Singh</span>
+            <span className="gradient-text">Growing Businesses</span>
           </motion.h1>
 
-          {/* Animated Typing Text */}
-          <motion.div 
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-text-primary min-h-[3rem] flex items-center"
-            variants={itemVariants}
-          >
-            <span className="text-accent-cyan">{displayText}</span>
-            <span className="animate-pulse text-accent-cyan">|</span>
-          </motion.div>
-
-          {/* Description */}
+          {/* Subheadline */}
           <motion.p 
             className="text-lg md:text-xl text-text-primary leading-relaxed max-w-2xl"
             variants={itemVariants}
           >
-            Full-stack developer crafting innovative digital solutions with modern technologies. 
-            Passionate about building scalable applications that make a real impact.
+            I partner with agencies and founders to build custom web systems, automate workflows, and deploy internal tools that save time and drive revenue.
           </motion.p>
 
-          {/* Stats */}
+          {/* Trust Counters */}
           <motion.div 
-            className="grid grid-cols-3 gap-6 py-6"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-t border-accent-cyan/10 mt-8"
             variants={itemVariants}
           >
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">2+</div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">50+</div>
+              <div className="text-sm text-text-primary">Systems Built</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">10k+</div>
+              <div className="text-sm text-text-primary">Hours Automated</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">100%</div>
+              <div className="text-sm text-text-primary">Delivery Rate</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">5+</div>
               <div className="text-sm text-text-primary">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">20+</div>
-              <div className="text-sm text-text-primary">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent-cyan">10+</div>
-              <div className="text-sm text-text-primary">Technologies</div>
             </div>
           </motion.div>
 
@@ -155,7 +118,7 @@ const Hero = () => {
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 <FaRocket className="w-4 h-4" />
-                Hire Me
+                Book a Strategy Call
               </span>
               <div className="absolute inset-0 bg-accent-cyan/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
@@ -165,7 +128,7 @@ const Hero = () => {
               className="group px-8 py-4 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan hover:text-dark-950 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <FaCode className="w-4 h-4" />
-              View Work
+              View Scalable Systems
             </Link>
           </motion.div>
 
