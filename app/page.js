@@ -13,17 +13,17 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-cyber text-text-primary relative overflow-hidden">
       {/* Cyber grid background */}
       <div className="fixed inset-0 cyber-bg opacity-30 pointer-events-none"></div>
-      
+
       {/* Gradient overlays */}
       <div className="fixed inset-0 bg-gradient-to-br from-transparent via-dark-950/50 to-dark-900/80 pointer-events-none"></div>
-      
+
       <Navbar />
       <Hero />
       <Services />
       <Experience />
       <About />
       <Portfolio />
-      <Pricing />
+      {/* <Pricing /> */}
       <Contact />
       <Footer />
     </main>
